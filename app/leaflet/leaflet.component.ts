@@ -24,6 +24,7 @@ export class LeafletComponent implements OnInit {
       zoom: 4,
       minZoom: 4,
       maxZoom: 18,
+      maxBounds: new L.LatLngBounds(new L.LatLng(24.9493, -125.0011), new L.LatLng(49.5904, -66.9326)),
       layers: [this._leafletService.baseMaps.OpenStreetMap]
     });
 
