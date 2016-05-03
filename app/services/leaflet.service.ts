@@ -1,5 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Map, TileLayer} from 'leaflet';
+import {Marker} from '../models/marker';
 
 @Injectable()
 export class LeafletService{
@@ -20,10 +21,9 @@ export class LeafletService{
         };
     }
 
-    disableMouseEvent(tag: string) {
-        var html = L.DomUtil.get(tag);
-
-        L.DomEvent.disableClickPropagation(html);
-        L.DomEvent.on(html, 'mousewheel', L.DomEvent.stopPropagation);
-    };
+    AddMakerToMap(marker: Marker){
+        L.marker([marker.lat, marker.lng])
+          .addTo(this.map)
+          .bindPopup(marker.message);
+    }
 }
