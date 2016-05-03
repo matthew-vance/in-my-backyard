@@ -2,11 +2,11 @@
     background-color: #dddddd;
     cursor: pointer;
 }
-.list-group-item-selected {
+.selected {
     background-color: #0B3D91;
     color: #ffffff;
 }
-.list-group-item-selected:hover {
+.selected:hover {
     background-color: #0B3D91;
     color: #ffffff;
 }

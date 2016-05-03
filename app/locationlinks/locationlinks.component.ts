@@ -14,6 +14,7 @@ export class LocationLinksComponent implements OnInit {
   private _locationsService: LocationsService;
   private _leafletService: LeafletService;
 
+  selectedLocation: Location;
   locations: Location[];
 
   constructor(locationsService: LocationsService, leafletService: LeafletService) {
@@ -31,6 +32,7 @@ export class LocationLinksComponent implements OnInit {
   }
 
   zoomToLocation(location: Location){
+      this.selectedLocation = location;
       this._leafletService.zoomToMarker(location.marker);
   }
 }

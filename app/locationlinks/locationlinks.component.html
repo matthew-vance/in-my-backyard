@@ -1,5 +1,8 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let location of locations" (click)="zoomToLocation(location)">
+    <li class="list-group-item"
+    *ngFor="let location of locations"
+    (click)="zoomToLocation(location)"
+    [class.selected]="location === selectedLocation">
         {{location.name}}
     </li>
 </ul>
