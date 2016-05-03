@@ -1,5 +1,5 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let location of locations">
+    <li class="list-group-item" *ngFor="let location of locations" (click)="zoomToLocation(location)">
         {{location.name}}
     </li>
 </ul>

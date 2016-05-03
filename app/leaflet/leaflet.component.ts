@@ -32,7 +32,7 @@ export class LeafletComponent implements OnInit {
     this._locationService.getLocations()
       .then(locations => {
         for (var i = 0; i < locations.length; i++) {
-          this._leafletService.AddMakerToMap(locations[i].marker);
+          this._leafletService.addMakerToMap(locations[i].marker);
         }
       })
   }

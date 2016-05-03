@@ -1,20 +1,24 @@
 import {Component, OnInit} from 'angular2/core';
 import {Location} from '../models/location';
 import {LocationsService} from '../services/locations.service';
+import {LeafletService} from '../services/leaflet.service';
 
 @Component({
   selector: 'location-links',
   templateUrl: './app/locationlinks/locationlinks.component.html',
+  styleUrls: ['./app/locationlinks/locationlinks.component.css'],
   providers: [LocationsService]
 })
 
 export class LocationLinksComponent implements OnInit {
   private _locationsService: LocationsService;
+  private _leafletService: LeafletService;
 
   locations: Location[];
 
-  constructor(locationsService: LocationsService) {
+  constructor(locationsService: LocationsService, leafletService: LeafletService) {
     this._locationsService = locationsService;
+    this._leafletService = leafletService;
   }
 
   ngOnInit() {
@@ -24,5 +28,9 @@ export class LocationLinksComponent implements OnInit {
   getLocations() {
     this._locationsService.getLocations()
       .then(locations => this.locations = locations);
+  }
+
+  zoomToLocation(location: Location){
+      this._leafletService.zoomToMarker(location.marker);
   }
 }

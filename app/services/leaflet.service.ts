@@ -21,9 +21,15 @@ export class LeafletService{
         };
     }
 
-    AddMakerToMap(marker: Marker){
+    addMakerToMap(marker: Marker){
         L.marker([marker.lat, marker.lng])
           .addTo(this.map)
           .bindPopup(marker.message);
+    }
+
+    zoomToMarker(marker: Marker){
+        this.map.setView([marker.lat, marker.lng], 14, {
+            animate: true
+        });
     }
 }

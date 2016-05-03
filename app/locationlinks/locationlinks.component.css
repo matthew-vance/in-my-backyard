@@ -1,0 +1,12 @@
+.list-group-item:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+.list-group-item-selected {
+    background-color: #0B3D91;
+    color: #ffffff;
+}
+.list-group-item-selected:hover {
+    background-color: #0B3D91;
+    color: #ffffff;
+}
