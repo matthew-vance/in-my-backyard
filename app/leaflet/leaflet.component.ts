@@ -6,7 +6,7 @@ import {Marker} from '../models/marker';
 @Component({
   selector: 'leaflet',
   templateUrl: './app/leaflet/leaflet.component.html',
-  providers: [LocationsService]
+  styleUrls: ['./app/leaflet/leaflet.component.css']
 })
 
 export class LeafletComponent implements OnInit {
@@ -19,7 +19,7 @@ export class LeafletComponent implements OnInit {
   }
 
   ngOnInit() {
-    var map = new L.Map('map', {
+    var map = new L.Map('leaflet', {
       center: new L.LatLng(37, -95),
       zoom: 4,
       minZoom: 4,
@@ -33,7 +33,7 @@ export class LeafletComponent implements OnInit {
     this._locationService.getLocations()
       .then(locations => {
         for (var i = 0; i < locations.length; i++) {
-          this._leafletService.addMakerToMap(locations[i].marker);
+          this._leafletService.addMarkerToMap(locations[i].marker);
         }
       })
   }

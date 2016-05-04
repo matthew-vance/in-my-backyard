@@ -1,9 +1,10 @@
 import {Injectable} from 'angular2/core';
 import {Map, TileLayer} from 'leaflet';
 import {Marker} from '../models/marker';
+import {MapService} from '../interfaces/mapService.interface';
 
 @Injectable()
-export class LeafletService{
+export class LeafletService implements MapService{
     map: Map;
     baseMaps: any;
 
@@ -21,7 +22,7 @@ export class LeafletService{
         };
     }
 
-    addMakerToMap(marker: Marker){
+    addMarkerToMap(marker: Marker){
         L.marker([marker.lat, marker.lng])
           .addTo(this.map)
           .bindPopup(marker.message);
