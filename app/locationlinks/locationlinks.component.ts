@@ -37,6 +37,6 @@ export class LocationLinksComponent implements OnInit {
   zoomToLocation(location: Location){
       this.selectedLocation = location;
       this._leafletService.zoomToMarker(location.marker);
-      this._googleMapsService.zoomToMarker(location.marker);
+      //this._googleMapsService.zoomToMarker(location.marker);
   }
 }
